@@ -12,19 +12,6 @@ int disGrid[width][height];
 
 int endSim = 0;
 
-void drawGrid(){
-	for (int y = 0; y < height; y++){
-		for (int x = 0; x < width; x++){
-			if (disGrid[x][y] == 1){
-				cout << "■ ";
-			}else{
-				cout <<"□ ";
-			}
-		}
-		cout << endl;
-	}
-}
-
 void ClearScreen(){	
 	COORD cursorPosition;
 	cursorPosition.X = 0;
@@ -42,6 +29,20 @@ void ShowConsoleCursor(bool showFlag)
     cursorInfo.bVisible = showFlag; // set the cursor visibility
     SetConsoleCursorInfo(out, &cursorInfo);
 }
+
+void drawGrid(){
+	for (int y = 0; y < height; y++){
+		for (int x = 0; x < width; x++){
+			if (disGrid[x][y] == 1){
+				cout << "■ ";
+			}else{
+				cout <<"□ ";
+			}
+		}
+		cout << endl;
+	}
+}
+
 
 int main () {
 	ShowConsoleCursor(false);
